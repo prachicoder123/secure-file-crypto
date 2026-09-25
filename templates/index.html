@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure File Encryption Tool</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🔒 Secure File Encryption Tool</h1>
+      <p class="subtitle">AES-256-GCM encryption &middot; Password-based &middot; Local &amp; private</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="encrypt">Encrypt</button>
+      <button class="tab-btn" data-tab="decrypt">Decrypt</button>
+    </div>
+
+    <!-- ENCRYPT PANEL -->
+    <section id="encrypt-panel" class="panel active">
+      <form id="encrypt-form">
+        <label class="drop-zone" id="encrypt-drop">
+          <span class="drop-text">Click to choose a file or drag it here</span>
+          <span class="file-name" id="encrypt-filename"></span>
+          <input type="file" id="encrypt-file" name="file" hidden required>
+        </label>
+
+        <label class="field-label" for="encrypt-password">Password</label>
+        <input type="password" id="encrypt-password" name="password" placeholder="Enter a strong password" required>
+
+        <button type="submit" class="action-btn">Encrypt File</button>
+      </form>
+      <div class="status" id="encrypt-status"></div>
+    </section>
+
+    <!-- DECRYPT PANEL -->
+    <section id="decrypt-panel" class="panel">
+      <form id="decrypt-form">
+        <label class="drop-zone" id="decrypt-drop">
+          <span class="drop-text">Click to choose an .enc file or drag it here</span>
+          <span class="file-name" id="decrypt-filename"></span>
+          <input type="file" id="decrypt-file" name="file" hidden required>
+        </label>
+
+        <label class="field-label" for="decrypt-password">Password</label>
+        <input type="password" id="decrypt-password" name="password" placeholder="Enter the password used to encrypt" required>
+
+        <button type="submit" class="action-btn">Decrypt File</button>
+      </form>
+      <div class="status" id="decrypt-status"></div>
+    </section>
+
+    <footer>
+      <p>Files are processed locally and deleted from the server immediately after each operation.</p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
