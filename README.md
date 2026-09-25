@@ -16,17 +16,17 @@ A password-based file encryption/decryption web app using **AES-256-GCM**, with 
 ## Project Structure
 ```
 secure-file-crypto/
-├── app.py                 # Flask server (routes: /, /encrypt, /decrypt)
-├── crypto_utils.py         # AES-256-GCM encryption/decryption logic
-├── requirements.txt        # Python dependencies
+├── app.py                
+├── crypto_utils.py        
+├── requirements.txt       
 ├── templates/
-│   └── index.html          # Web UI page
+│   └── index.html          
 ├── static/
-│   ├── style.css            # Styling
-│   └── script.js             # Front-end logic (tabs, drag-drop, fetch calls)
-├── uploads/                 # Temp storage for incoming files (auto-cleaned)
-├── encrypted/                # Temp storage for encrypted output (auto-cleaned)
-└── decrypted/                 # Temp storage for decrypted output (auto-cleaned)
+│   ├── style.css            
+│   └── script.js            
+├── uploads/                 
+├── encrypted/                
+└── decrypted/                 
 ```
 
 ## Setup & Run in VS Code
